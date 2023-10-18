@@ -38,14 +38,83 @@ if (annee < 0) {
 }
 
 
-if (mois>12 || mois<0){
+if (mois > 12 || mois < 0) {
     isvalide = false
 }
 
-
-
-if (isvalide) {
-    console.log("Votre date est valide : ");
-}else {
-    console.log("Votre date est ´ invalide : ");
+if (jour < 0 || jour > 31) {
+    isvalide = false;
 }
+
+switch (mois) {
+    case 2:
+        if ((annee % 4 == 0 && annee % 100 != 0) || (annee % 400 == 0)) {
+            if (jour > 29) {
+                isvalide = false;
+            } else if (jour > 28) {
+                isvalide = false;
+            }
+        }
+        break;
+    case 4:
+    case 6:
+    case 9:
+    case 11:
+        if (jour > 30) {
+            isvalide = false;
+        }
+        break;
+}
+
+
+let result = "Le ";
+result += jour;
+
+if
+(isvalide) {
+    jour;
+    switch (mois) {
+        case 1:
+            result = result + " janvier";
+            break;
+        case 2:
+            result = result + " février";
+            break;
+        case 3:
+            result = result + " mars";
+            break;
+        case 4:
+            result = result + " avril";
+            break;
+        case 5:
+            result = result + " mai";
+            break;
+        case 6:
+            result = result + " juin";
+            break;
+        case 7:
+            result = result + " juillet";
+            break;
+        case 8:
+            result = result + " aout";
+            break;
+        case 9:
+            result = result + " septembre";
+            break;
+        case 10:
+            result = result + " octobre";
+            break;
+        case 11:
+            result = result + " novembre";
+            break;
+        case 12:
+            result = result + " décembre";
+            break;
+
+    }
+} else {
+    console.log("Votre date est  invalide : ");
+}
+result += " " + annee;
+result += " est une date valide";
+console.log(result);
