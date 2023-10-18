@@ -23,8 +23,39 @@ BONNE CHANCE 😀
 
 // sans bonus
 
+const scoreJohn1 =89;
+const scoreJohn2 =120;
+const scoreJohn3 =103;
 
+const scoreMike1 =116;
+const scoreMike2 =94;
+const scoreMike3 =123;
+
+const averageJohn=(scoreJohn1+scoreJohn2+scoreJohn3)/3;
+const averageMike=(scoreMike1+scoreMike2+scoreMike3)/3;
+
+if (averageJohn > averageMike) {
+    gagnant = 'John';
+} else if (averageMike > averageJohn) {
+    gagnant = 'Mike';
+} else {
+    gagnant = 'Match nul';
+}
 
 // avec bonus
 
+const scoreMary1 =97;
+const scoreMary2 =134;
+const scoreMary3 =105;
 
+const averageMary = (scoreMary1+scoreMary2+scoreMary3)/3
+
+if (averageJohn > averageMike && averageJohn > moyenneMary) {
+    console.log(`John a gagné avec un score moyen de ${averageJohn}.`);
+} else if (averageMike > averageJohn && moyenneMike > moyenneMary) {
+    console.log(`Mike a gagné avec un score moyen de ${averageMike}.`);
+} else if (moyenneMary > averageJohn && moyenneMary > averageMike) {
+    console.log(`Mary a gagné avec un score moyen de ${moyenneMary}.`);
+} else {
+    console.log('Match nul');
+}

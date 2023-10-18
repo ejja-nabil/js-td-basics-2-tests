@@ -14,6 +14,14 @@
 4. Testez différents cas de figure en changeant la valeur de height (par exemple 0, ou NaN) ou en ne lui affectant pas de valeur… ATTENTION, votre script doit bien dire que "La variable height est définie" dans le cas où on a donné à height une valeur de 0…
 */
 
+const height;
+height = 23;
+
+if (height !== undefined && height !== null) {
+    console.log("La variable height est définie");
+} else {
+    console.log("La variable height n'est PAS définie");
+}
 
 
 /*
@@ -23,6 +31,14 @@
 4. Testez différents cas de figure en changeant la valeur de height ou en ne lui affectant pas de valeur…
 */
 
+let height;
+height = 23;
+
+if (height !== null && height !== undefined) {
+    console.log("Cette variable contient bien une valeur non nulle");
+} else {
+    console.log("Cette variable est nulle ou non définie");
+}
 
 
 

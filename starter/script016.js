@@ -17,6 +17,9 @@ var age = 14;
 2. Testez en changeant l'âge de John (14 ans, 24 ans)
 */
 
+const age = 24;
+const boisson = age >= 18 ? "bières" : "jus";
+console.log("John boit des " + boisson + ".");
 
 
 /*
@@ -25,11 +28,19 @@ MEILLEURE PRATIQUE : utiliser l'expression ternaire pour affecter une valeur ou 
 2. Afficher "John boit des …" (l'affichage s'adapte à l'âge de John, tester différents cas)
 */
 
-
-
 /* Faites la même chose en utilisant un if / else */
 
 
+const age = 24;
+let drink;
+
+if (age >= 18) {
+    drink = "bières";
+} else {
+    drink = "jus";
+}
+
+console.log("John boit des " + drink + ".");
 
 
 // 16 - 2. L'instruction Switch
@@ -46,6 +57,23 @@ MEILLEURE PRATIQUE : utiliser l'expression ternaire pour affecter une valeur ou 
 3. Testez les différents cas de figure en changeant la profession de John
 */
 
+const job = "instituteur";
+
+switch (job) {
+    case "professeur":
+    case "instituteur":
+        console.log("John enseigne la programmation aux enfants.");
+        break;
+    case "chauffeur":
+        console.log("John conduit un taxi à Lisbonne.");
+        break;
+    case "designer":
+        console.log("John conçoit de beaux sites web.");
+        break;
+    default:
+        console.log("John fait autre chose.");
+        break;
+}
 
 
 /* 
@@ -59,6 +87,22 @@ MEILLEURE PRATIQUE : utiliser l'expression ternaire pour affecter une valeur ou 
 4. Testez avec un âge de 7 ans en enlevant la 2e instruction break pour voir ce que cela a comme impact
 */
 
+const age = 56;
+
+switch (true) {
+    case (age < 13):
+        console.log("John est un garçon.");
+        break;
+    case (age >= 13 && age <= 20):
+        console.log("John est un adolescent.");
+        break;
+    case (age > 20 && age < 30):
+        console.log("John est un jeune homme.");
+        break;
+    default:
+        console.log("John est un homme.");
+        break;
+}
 
 
 // Autre application de l'instruction switch
@@ -77,7 +121,40 @@ MEILLEURE PRATIQUE : utiliser l'expression ternaire pour affecter une valeur ou 
  	 affichez "Je n'ai pas compris !"
 */
 
+const meteo = prompt("Quel temps fait-il dehors ? (soleil, vent, pluie ou neige)");
+
+switch (meteo) {
+    case "soleil":
+        console.log("Sortez en t-shirt.");
+        break;
+    case "vent":
+        console.log("Sortez en pull.");
+        break;
+    case "pluie":
+        console.log("Sortez en blouson.");
+        break;
+    case "neige":
+        console.log("Restez au chaud à la maison.");
+        break;
+    default:
+        console.log("Je n'ai pas compris !");
+        break;
+}
 // b) Switch sans break
+const meteo = prompt("Quel temps fait-il dehors ? (soleil, vent, pluie ou neige)");
+
+switch (meteo) {
+    case "soleil":
+        console.log("Sortez en t-shirt.");
+    case "vent":
+        console.log("Sortez en pull.");
+    case "pluie":
+        console.log("Sortez en blouson.");
+    case "neige":
+        console.log("Restez au chaud à la maison.");
+    default:
+        console.log("Je n'ai pas compris !");
+}
 
 // L'instruction `break` fait sortir du bloc du switch.  On ne souhaite pas toujours sortir, dans ce cas, on peut ne pas mettre de `break`
 
@@ -86,6 +163,37 @@ MEILLEURE PRATIQUE : utiliser l'expression ternaire pour affecter une valeur ou 
 2. Affichez ensuite dans la console le message suivant : "Les jours suivants se sont déjà écoulés depuis le début de la semaine : …, …, …"
 */
 
+const jour = parseInt(prompt("Entrez le numéro du jour de la semaine (1 pour lundi):"));
+
+let joursPasses = "";
+
+switch (jour) {
+    case 1:
+        joursPasses = "Mardi, Mercredi, Jeudi, Vendredi, Samedi et Dimanche";
+        break;
+    case 2:
+        joursPasses = "Mercredi, Jeudi, Vendredi, Samedi et Dimanche";
+        break;
+    case 3:
+        joursPasses = "Jeudi, Vendredi, Samedi et Dimanche";
+        break;
+    case 4:
+        joursPasses = "Vendredi, Samedi et Dimanche";
+        break;
+    case 5:
+        joursPasses = "Samedi et Dimanche";
+        break;
+    case 6:
+        joursPasses = "Dimanche";
+        break;
+    case 7:
+        joursPasses = "Aucun, c'est aujourd'hui le début de la semaine !";
+        break;
+    default:
+        joursPasses = "Veuillez entrer un numéro valide de jour de la semaine (1 à 7).";
+}
+
+console.log("Les jours suivants se sont déjà écoulés depuis le début de la semaine : " + joursPasses);
 
 
 

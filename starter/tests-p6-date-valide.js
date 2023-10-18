@@ -26,4 +26,26 @@ Par exemple,
  - Il ne reste plus ensuite qu'à comparer le jour entré par l'utilisateur avec maxJour pour retourner true ou fasle
   selon que la date est valide ou pas.
   */
-  
+
+
+const jour = parseInt(prompt("Entrez le jour : "));
+const mois = parseInt(prompt("Entrez le mois : "));
+const annee = parseInt(prompt("Entrez l'année : "));
+let isvalide = true;
+
+if (annee < 0) {
+    isvalide = false;
+}
+
+
+if (mois>12 || mois<0){
+    isvalide = false
+}
+
+
+
+if (isvalide) {
+    console.log("Votre date est valide : ");
+}else {
+    console.log("Votre date est ´ invalide : ");
+}
